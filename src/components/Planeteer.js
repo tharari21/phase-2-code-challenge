@@ -22,6 +22,7 @@ function Planeteer({planeteer}) {
           </p>
           <div className="card__detail">
             <p>{planeteer.twitter}</p>
+            <p>Age: {new Date().getFullYear() - planeteer.born}</p>
             <p>{planeteer.fromUSA ? "USA-based" : "working overseas"}</p>
           </div>
         </div>
