@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Header from "./Header";
 import RandomButton from "./RandomButton";
@@ -6,12 +6,16 @@ import PlaneteersContainer from "./PlaneteersContainer";
 import SearchBar from "./SearchBar";
 
 function App() {
+  const [searchText, setSearchText] = useState("");
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
   return (
     <div>
       <Header />
-      <SearchBar />
+      <SearchBar searchText={searchText} onChange={handleChange} />
       <RandomButton />
-      <PlaneteersContainer />
+      <PlaneteersContainer searchText={searchText} />
     </div>
   );
 }
